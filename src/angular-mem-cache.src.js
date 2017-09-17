@@ -25,7 +25,7 @@
         return;
       }
 
-      for (conf in _defaults) {
+      for (var conf in _defaults) {
         _config[conf] = options[conf] || _defaults[conf];
       }
     };
@@ -161,8 +161,9 @@
     };
 
     _this.clean = function(cacheId, isGroup) {
-      if (!_cache)
+      if (!_cache) {
         return;
+      }
 
       var clean = (isGroup) ? _cache.cleanGroup : _cache.clean;
       return clean(cacheId);

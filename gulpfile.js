@@ -6,7 +6,7 @@ var stylish = require('jshint-stylish');
 var jshintSummary = require('jshint-stylish-summary');
 
 gulp.task('lint', function() {
-	return gulp.src('./js/**/*.js')
+	return gulp.src('./src/**/*.js')
 		.pipe(jshint('.jshintrc'))
 		.pipe(jshint.reporter('jshint-stylish'))
 		.pipe(jshint.reporter('fail'))
