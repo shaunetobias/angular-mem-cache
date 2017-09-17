@@ -124,11 +124,17 @@
 
   })
     
-  .service('CacheProvider', function(LocalCache) {
+  .service('CacheProvider', function($memCache, LocalCache) {
 
     var _this = this;
     var _cache = null;
 
+    /**
+     * Interface for LocalCache service
+     *
+     * @function
+     * @param {Object} options - Custom configs from client
+     */
     var cacheInterface = function(options) {
 
       LocalCache.init(options);
@@ -152,14 +158,33 @@
       };
     };
 
+    /**
+     * Create a new instance of the cache service
+     *
+     * @function
+     * @param {Object} options - Custom configs from client
+     */
     var createCache = function(options) {
       return new cacheInterface(options);
     };
 
+    /**
+     * Get the current instance of the cache service
+     *
+     * @function
+     * @return {Object}
+     */
     _this.get = function() {
       return _cache;
     };
 
+    /**
+     * Reset a specified cache
+     *
+     * @function
+     * @param {string} cacheId - Name of the cache to reset
+     * @param {boolean} isGroup - If true, cacheId becomes the name of the group to reset
+     */
     _this.clean = function(cacheId, isGroup) {
       if (!_cache) {
         return;
@@ -169,17 +194,44 @@
       return clean(cacheId);
     };
 
+    /**
+     * Clear all caches and create new instance of cache service
+     *
+     * @function
+     */
     _this.destroy = function() {
       LocalCache.destroy();
-      _cache = createCache();
+      _cache = createCache($memCache.config);
     };
 
+    /**
+     * Initialize cache service with configs
+     *
+     * @function
+     */
     function init() {
-      _cache = createCache();
+      _cache = createCache($memCache.config);
     }
     init();
 
     return _this;
+  })
+
+  .provider('$memCache', function() {
+
+    var config = {};
+
+    return {
+      init: function(options) {
+        config = options;
+      },
+      $get: function() {
+        return {
+          config: config
+        };
+      }
+    };
+
   });
 
 })(angular);
