@@ -1,0 +1,22 @@
+{
+  "name": "angular-mem-cache",
+  "homepage": "https://github.com/tobiasdotco/angular-mem-cache",
+  "authors": [
+    "tobiasdotco"
+  ],
+  "description": "In-memory caching service for AngularJS",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "src",
+    "examples",
+    "_tests",
+    "gulpfile.js",
+    "karma.conf.js",
+    "package.json"
+  ],
+  "license": "MIT"
+}
+
