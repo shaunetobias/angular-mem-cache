@@ -1,0 +1,26 @@
+{
+  "globalstrict": true,
+  "globals": {
+    "angular": false,
+    "jQuery": false,
+    "describe": false,
+    "console": false,
+    "it": false,
+    "expect": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "module": false,
+    "inject": false,
+    "document": false,
+    "navigator": false,
+    "moment": false,
+    "google": false,
+    "MarkerClusterer": false,
+    "FileReader": false,
+    "FormData": false
+  },
+  "curly": true,
+  "eqeqeq": true,
+  "expr": true,
+  "quotmark": "single"
+}

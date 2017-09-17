@@ -1,0 +1,30 @@
+{
+  "name": "angular-mem-cache",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobiasdotco/angular-mem-cache.git"
+  },
+  "author": "tobiasdotco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tobiasdotco/angular-mem-cache/issues"
+  },
+  "homepage": "https://github.com/tobiasdotco/angular-mem-cache#readme",
+  "devDependencies": {
+    "angular": "1.5.0",
+    "angular-mocks": "1.5.0",
+    "angular-ui-router": "^0.2.17",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "jasmine-core": "^2.5.2",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "jshint-stylish-summary": "^0.1.2",
+    "karma": "^1.3.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-spec-reporter": "0.0.26"
+  }
+}
