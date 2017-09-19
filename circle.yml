@@ -1,0 +1,10 @@
+machine:
+  timezone:
+    America/New_York
+test:
+  override:
+    - gulp test
+deployment:
+  qa:
+    branch: master
+ 
