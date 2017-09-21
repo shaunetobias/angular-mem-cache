@@ -6,7 +6,7 @@
 
   .service('LocalCache', function($timeout) {
 
-    var _config = {};
+    var config = {};
     var _caches = [];
     var _defaults = {
       expires: 300000
@@ -21,12 +21,12 @@
      */
     var init = function(options) {
       if (!options) {
-        _config = angular.extend({}, _defaults);
+        config = angular.extend({}, _defaults);
         return;
       }
 
       for (var conf in _defaults) {
-        _config[conf] = options[conf] || _defaults[conf];
+        config[conf] = options[conf] || _defaults[conf];
       }
     };
 
@@ -86,7 +86,7 @@
 
       $timeout(function() {
         clean(cacheId);
-      }, _config.expires);
+      }, config.expires);
     };
 
     /**
@@ -119,7 +119,8 @@
       load: load,
       clean: clean,
       cleanGroup: cleanGroup,
-      destroy: destroy
+      destroy: destroy,
+      config: config
     };
 
   })
