@@ -1,7 +1,7 @@
 # angular-mem-cache
 In-memory caching service for AngularJS
 
-[![CircleCI](https://circleci.com/gh/tobiasdotco/angular-mem-cache/tree/master.svg?style=shield&circle-token=edde34a0a62770e6e2ef5554a257e58bb951ee37)](https://circleci.com/gh/tobiasdotco/angular-mem-cache/tree/master)
+[![npm version](https://badge.fury.io/js/angular-mem-cache.svg)](https://badge.fury.io/js/angular-mem-cache) [![CircleCI](https://circleci.com/gh/tobiasdotco/angular-mem-cache/tree/master.svg?style=shield&circle-token=edde34a0a62770e6e2ef5554a257e58bb951ee37)](https://circleci.com/gh/tobiasdotco/angular-mem-cache/tree/master)
 
 ## Dependencies
 Angular ^1.5.0
