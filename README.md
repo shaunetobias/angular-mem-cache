@@ -6,6 +6,12 @@ In-memory caching service for AngularJS
 ## Dependencies
 Angular ^1.5.0
 
+## Install
+
+npm: `npm i angular-mem-cache`
+
+Yarn: `yarn add angular-mem-cache`
+
 ## Configuration
 
     angular.module('myApp', ['ngMemCache'])
