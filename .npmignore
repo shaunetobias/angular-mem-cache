@@ -1,0 +1,8 @@
+_tests
+src
+bower.json
+circle.yml
+gulpfile.js
+karma.conf.js
+.jshintrc
+.gitignore
