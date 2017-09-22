@@ -1,6 +1,6 @@
 {
   "name": "angular-mem-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "In-memory caching service for AngularJS",
   "repository": {
     "type": "git",
