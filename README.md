@@ -93,6 +93,8 @@ As the CacheProvider is a singleton, the following operations can be called anyw
     })
     
     .controller('TasksCtrl', function($scope, RequestClient, CacheProvider) {
+    
+      $scope.tasks = {};
       
       $scope.getDueTasks = function() {
         return RequestClient.get({
@@ -116,9 +118,14 @@ As the CacheProvider is a singleton, the following operations can be called anyw
       
       $scope.refreshTasks = function() {
         CacheProvider.clean('tasks', true);
-        $scope.getDueTasks();
-        $scope.getClosedTasks();
+        $scope.tasks.due = $scope.getDueTasks();
+        $scope.tasks.closed = $scope.getClosedTasks();
       };
+      
+      function init() {
+        $scope.refreshTasks();
+      }
+      init();
       
     });
     
