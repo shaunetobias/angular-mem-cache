@@ -4,7 +4,7 @@
 
   angular.module('ngMemCache', [])
 
-  .service('LocalCache', function($timeout) {
+  .service('LocalCache', ['$timeout', function($timeout) {
 
     var config = {};
     var _caches = [];
@@ -123,9 +123,9 @@
       config: config
     };
 
-  })
+  }])
     
-  .service('CacheProvider', function($memCache, LocalCache) {
+  .service('CacheProvider', ['$memCache', 'LocalCache', function($memCache, LocalCache) {
 
     var _this = this;
     var _cache = null;
@@ -216,7 +216,7 @@
     init();
 
     return _this;
-  })
+  }])
 
   .provider('$memCache', function() {
 
