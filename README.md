@@ -124,7 +124,7 @@ As the CacheProvider is a singleton, the following operations can be called anyw
       };
       
       $scope.loadTasks = function() {
-    	$scope.tasks.due = $scope.getDueTasks();
+        $scope.tasks.due = $scope.getDueTasks();
         $scope.tasks.closed = $scope.getClosedTasks();
       };
       
