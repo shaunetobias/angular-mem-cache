@@ -118,12 +118,16 @@ As the CacheProvider is a singleton, the following operations can be called anyw
       
       $scope.refreshTasks = function() {
         CacheProvider.clean('tasks', true);
-        $scope.tasks.due = $scope.getDueTasks();
+        $scope.loadTasks();
+      };
+      
+      $scope.loadTasks = function() {
+    	$scope.tasks.due = $scope.getDueTasks();
         $scope.tasks.closed = $scope.getClosedTasks();
       };
       
       function init() {
-        $scope.refreshTasks();
+        $scope.loadTasks();
       }
       init();
       
