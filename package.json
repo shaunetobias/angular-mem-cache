@@ -1,7 +1,7 @@
 {
   "name": "angular-mem-cache",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "In-memory caching service for AngularJS",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tobiasdotco/angular-mem-cache.git"
@@ -12,10 +12,11 @@
     "url": "https://github.com/tobiasdotco/angular-mem-cache/issues"
   },
   "homepage": "https://github.com/tobiasdotco/angular-mem-cache#readme",
+  "dependencies": {
+    "angular": "1.5.0"
+  },
   "devDependencies": {
-    "angular": "1.5.0",
     "angular-mocks": "1.5.0",
-    "angular-ui-router": "^0.2.17",
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.4",
     "gulp-minify": "^1.0.0",
