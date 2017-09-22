@@ -82,13 +82,13 @@ As the CacheProvider is a singleton, the following operations can be called anyw
       return {
         get: function(options) {
         
-          if (cache.exists(options.cache)) {
-            return cache.load(options.cache);
+          if (cache.exists(options.cacheId)) {
+            return cache.load(options.cacheId);
           } else {
           
             $http(options)
             .then(function(response) {
-              cache.save(options.cache, response, options.cacheParams);
+              cache.save(options.cacheId, response, options.cacheParams);
               
               return response;
             });
@@ -107,7 +107,7 @@ As the CacheProvider is a singleton, the following operations can be called anyw
       $scope.getDueTasks = function() {
         return RequestClient.get({
           url: '/api/tasks/due',
-          cache: 'tasks_due',
+          cacheId: 'tasks_due',
           cacheParams: {
             group: 'tasks'
           }
@@ -117,7 +117,7 @@ As the CacheProvider is a singleton, the following operations can be called anyw
       $scope.getClosedTasks = function() {
         return RequestClient.get({
           url: '/api/tasks/closed',
-          cache: 'tasks_closed',
+          cacheId: 'tasks_closed',
           cacheParams: {
             group: 'tasks'
           }
