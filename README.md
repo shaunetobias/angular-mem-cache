@@ -79,12 +79,14 @@ As the CacheProvider is a singleton, the following operations can be called anyw
           if (cache.exists(options.cache)) {
             return cache.load(options.cache);
           } else {
+          
             $http(options)
             .then(function(response) {
               cache.save(options.cache, response, options.cacheParams);
               
               return response;
             });
+            
           }
           
         }
