@@ -26,7 +26,7 @@ Yarn: `yarn add angular-mem-cache`
 
 
 ## Basic Use
-The following are operations you would run where handling data. Usually a request service that handles all of your XHR requests.
+The following are operations you would run where handling data. Usually in a request service that handles all of your XHR requests.
 
     //instantiate cache
     var cache = CacheProvider.get();
