@@ -79,14 +79,17 @@
      * @param {Object} data - The object to cache
      * @param {Object} params - Option params for the cache
      * @param {string} [params.group] - Name of the group to which this cache belongs
+     * @param {number} [params.expires] - Time in ms to keep cache (overrides config)
      */
     var save = function(cacheId, data, params) {
       _caches[cacheId] = angular.extend({}, params);
       _caches[cacheId].current = data;
 
+      var expires = _caches[cacheId].expires || config.expires;
+
       $timeout(function() {
         clean(cacheId);
-      }, config.expires);
+      }, expires);
     };
 
     /**

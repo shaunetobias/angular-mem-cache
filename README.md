@@ -50,6 +50,7 @@ Multiple caches can be grouped to make validation and deletion of multiple cache
     cache.save('session_id', 'Fdfhk41254VFCfa4T32FDSF4yh23498', {group: 'globals'});
 
 
+
 ## Deleting Caches
 As the CacheProvider is a singleton, the following operations can be called anywhere in the application, e.g. a logout controller.
 
@@ -61,6 +62,25 @@ As the CacheProvider is a singleton, the following operations can be called anyw
     
     //destroy cache instance
     CacheProvider.destroy();
+
+
+
+## Expiring Caches
+Cache expiration time can be configured on two levels: using a provider to set a global expiration time, or in the cacheParams during each cache.save() to set expirations on individual caches. Order of precedence is: individual, global, global default (300000). All times are in milliseconds.
+
+    //global level
+    .config(function($memCacheProvider) {
+    
+      $memCacheProvider.init({
+        expires: 20000
+      });
+      
+    })
+    
+    //individual level
+    var cache = CacheProvider.get();
+    cache.save('tasks_due', [id: 123], cacheParams: {expires: 60000});
+    
 
 
 ## Example
@@ -109,7 +129,8 @@ As the CacheProvider is a singleton, the following operations can be called anyw
           url: '/api/tasks/due',
           cacheId: 'tasks_due',
           cacheParams: {
-            group: 'tasks'
+            group: 'tasks',
+            expires: 60000
           }
         });
       };
