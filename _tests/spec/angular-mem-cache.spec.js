@@ -143,7 +143,8 @@
 
         expect(cacheExists).toBe(true);
       });
-    })
+
+    });
 
   });
 
