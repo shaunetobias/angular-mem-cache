@@ -75,7 +75,7 @@ Cache expiration time can be configured on two levels: using a provider to set a
         expires: 20000
       });
       
-    })
+    });
     
     //individual level
     var cache = CacheProvider.get();
