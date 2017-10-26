@@ -13,7 +13,7 @@
     describe('User configuration', function() {
       beforeEach(module(function($memCacheProvider) {
         $memCacheProvider.init({
-          expires: 5000
+          expires: 750
         });
       }));
 
@@ -22,7 +22,7 @@
       }));
 
       it('User configured expiration should override default', function() {
-        expect($memCache.config.expires).toBe(5000);
+        expect($memCache.config.expires).toBe(750);
       });
 
     });
@@ -107,6 +107,43 @@
       });
 
     });
+
+    describe('Cache expiration', function() {
+
+      var cache;
+
+      beforeEach(function() {
+        cache = CacheProvider.get();
+      });
+
+      it('Expiration set in cache params should override default', function() {
+
+        var data = {id: 123};
+        var cacheParams = {expires: 500};
+
+        cache.save('testCache', data, cacheParams);
+
+        $timeout.flush(500);
+
+        var cacheExists = cache.exists('testCache');
+
+        expect(cacheExists).toBe(false);
+      });
+
+      it('Expiration set in cache params should override provider config', function() {
+
+        var data = {id: 123};
+        var cacheParams = {expires: 1000};
+
+        cache.save('testCache', data, cacheParams);
+
+        $timeout.flush(750);
+
+        var cacheExists = cache.exists('testCache');
+
+        expect(cacheExists).toBe(true);
+      });
+    })
 
   });
 
