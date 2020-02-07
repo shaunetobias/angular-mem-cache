@@ -12,6 +12,9 @@ npm: `npm i angular-mem-cache`
 
 Yarn: `yarn add angular-mem-cache`
 
+Add the following to your index file:
+`<script src="node_modules/angular-mem-cache/dist/angular-mem-cache.min.js"></script>`
+
 ## Configuration
 
     angular.module('myApp', ['ngMemCache'])
