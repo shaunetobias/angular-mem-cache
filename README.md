@@ -1,7 +1,7 @@
 # angular-mem-cache
 In-memory caching service for AngularJS
 
-[![npm version](https://badge.fury.io/js/angular-mem-cache.svg)](https://badge.fury.io/js/angular-mem-cache) [![CircleCI](https://circleci.com/gh/tobiasdotco/angular-mem-cache/tree/master.svg?style=shield&circle-token=edde34a0a62770e6e2ef5554a257e58bb951ee37)](https://circleci.com/gh/tobiasdotco/angular-mem-cache/tree/master)
+[![npm version](https://badge.fury.io/js/angular-mem-cache.svg)](https://badge.fury.io/js/angular-mem-cache) [![CircleCI](https://circleci.com/gh/shaunetobias/angular-mem-cache.svg?style=svg&circle-token=edde34a0a62770e6e2ef5554a257e58bb951ee37)](https://circleci.com/gh/shaunetobias/angular-mem-cache)
 
 ## Dependencies
 Angular ^1.5.0
@@ -11,6 +11,10 @@ Angular ^1.5.0
 npm: `npm i angular-mem-cache`
 
 Yarn: `yarn add angular-mem-cache`
+
+Add the following to your index file:
+
+`<script src="node_modules/angular-mem-cache/dist/angular-mem-cache.min.js"></script>`
 
 ## Configuration
 
@@ -75,7 +79,7 @@ Cache expiration time can be configured on two levels: using a provider to set a
         expires: 20000
       });
       
-    })
+    });
     
     //individual level
     var cache = CacheProvider.get();
