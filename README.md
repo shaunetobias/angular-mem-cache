@@ -83,7 +83,7 @@ Cache expiration time can be configured on two levels: using a provider to set a
     
     //individual level
     var cache = CacheProvider.get();
-    cache.save('tasks_due', [id: 123], cacheParams: {expires: 60000});
+    cache.save('tasks_due', [{id: 123}], {expires: 60000});
     
 
 
